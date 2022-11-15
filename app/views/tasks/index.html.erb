@@ -1,7 +1,7 @@
 <h1>My tasks</h1>
 <ol>
   <% @tasks.each do |task|  %>
-    <li><%= task.title %> <%= task.details %>
+    <li><%= link_to task.title, task_path(task) %> <%= task.details %>
     <% if task.completed %>
       <i class="fa-regular fa-square-check"></i>
     <% else %>
@@ -10,3 +10,5 @@
     <% end %>
   <% end %>
 </ol>
+
+<%= link_to "Add new Task", new_task_path %>
